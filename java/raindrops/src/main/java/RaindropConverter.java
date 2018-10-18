@@ -1,13 +1,14 @@
 class RaindropConverter {
 
     String convert(int number) {
-        if(number==1) {
-            return "1";
-        }
+        String raindropString = "";
         if(number % 3 == 0) {
-            return "Pling";
+            raindropString += "Pling";
         }
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if(raindropString.length()==0) {
+            raindropString = "" + number;
+        }
+        return raindropString;
     }
 
 }
