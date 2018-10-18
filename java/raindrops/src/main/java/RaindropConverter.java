@@ -8,6 +8,9 @@ class RaindropConverter {
         if(number % 5 == 0) {
             raindropString += "Plang";
         }
+        if(number % 7 == 0) {
+            raindropString += "Plong";
+        }
         if(raindropString.length()==0) {
             raindropString = "" + number;
         }
