@@ -11,7 +11,6 @@ public class IsogramCheckerTest {
         assertTrue(iso.isIsogram(""));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testLowercaseIsogram() {
         IsogramChecker iso = new IsogramChecker();
