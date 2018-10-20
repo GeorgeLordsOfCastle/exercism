@@ -59,7 +59,6 @@ public class IsogramCheckerTest {
         assertTrue(iso.isIsogram("six-year-old"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testMadeUpNameThatIsAnIsogram() {
         IsogramChecker iso = new IsogramChecker();
