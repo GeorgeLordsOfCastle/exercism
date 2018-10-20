@@ -5,7 +5,7 @@ class IsogramChecker {
 
     boolean isIsogram(String phrase) {
         List<Character> distinctCharacterList = new ArrayList<>();
-        for (char c : phrase.toCharArray()) {
+        for (char c : phrase.toLowerCase().toCharArray()) {
             if(distinctCharacterList.contains(c)) {
                 return false;
             }

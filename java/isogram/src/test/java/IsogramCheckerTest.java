@@ -35,7 +35,6 @@ public class IsogramCheckerTest {
         assertTrue(iso.isIsogram("subdermatoglyphic"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCaseInsensitive() {
         IsogramChecker iso = new IsogramChecker();
