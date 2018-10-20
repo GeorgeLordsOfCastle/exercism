@@ -53,7 +53,6 @@ public class IsogramCheckerTest {
         assertTrue(iso.isIsogram("thumbscrew-japingly"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testIsogramWithDuplicatedHyphen() {
         IsogramChecker iso = new IsogramChecker();
