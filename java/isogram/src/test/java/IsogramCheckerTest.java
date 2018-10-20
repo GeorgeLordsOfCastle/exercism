@@ -65,14 +65,12 @@ public class IsogramCheckerTest {
         assertTrue(iso.isIsogram("Emily Jung Schwartzkopf"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDuplicatedCharacterInTheMiddleIsNotIsogram() {
         IsogramChecker iso = new IsogramChecker();
         assertFalse(iso.isIsogram("accentor"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSameFirstAndLast() {
         IsogramChecker iso = new IsogramChecker();
