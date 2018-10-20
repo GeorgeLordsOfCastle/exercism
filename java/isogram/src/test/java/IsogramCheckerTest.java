@@ -41,14 +41,12 @@ public class IsogramCheckerTest {
         assertFalse(iso.isIsogram("Alphabet"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDuplicatMixedCase() {
         IsogramChecker iso = new IsogramChecker();
         assertFalse(iso.isIsogram("alphAbet"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testIsogramWithHyphen() {
         IsogramChecker iso = new IsogramChecker();
