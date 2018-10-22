@@ -19,7 +19,7 @@ public class TwoferTest {
         String input = null;
         String expected = "One for you, one for me.";
 
-        assertEquals(expected, twofer.twofer(input));
+        assertThat(twofer.twofer(input), is(expected));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class TwoferTest {
         String input = "Alice";
         String expected = "One for Alice, one for me.";
 
-        assertEquals(expected, twofer.twofer(input));
+        assertThat(twofer.twofer(input), is(expected));
     }
 
     @Test
