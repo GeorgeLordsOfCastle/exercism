@@ -24,7 +24,7 @@ public class TwoferTest {
 
     @Test
     public void voidNameGivenReturnsYouAsName() {
-        String input = null;
+        String input = "";
         String expected = "One for you, one for me.";
 
         assertThat(twofer.twofer(input), is(expected));
