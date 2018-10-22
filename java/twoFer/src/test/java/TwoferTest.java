@@ -1,8 +1,9 @@
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class TwoferTest {
 
@@ -19,6 +20,14 @@ public class TwoferTest {
         String expected = "One for you, one for me.";
 
         assertEquals(expected, twofer.twofer(input));
+    }
+
+    @Test
+    public void voidNameGivenReturnsYouAsName() {
+        String input = null;
+        String expected = "One for you, one for me.";
+
+        assertThat(twofer.twofer(input), is(expected));
     }
 
     @Test
