@@ -2,21 +2,21 @@ class RaindropConverter {
 
     String convert(int number) {
         String raindropString = "";
-        boolean isAtLeastAFactorFound = false;
+        boolean noFactorsWereFound = true;
         if(number % 3 == 0) {
             raindropString += "Pling";
-            isAtLeastAFactorFound = true;
+            noFactorsWereFound = false;
         }
         if(number % 5 == 0) {
             raindropString += "Plang";
-            isAtLeastAFactorFound = true;
+            noFactorsWereFound = false;
         }
         if(number % 7 == 0) {
             raindropString += "Plong";
-            isAtLeastAFactorFound = true;
+            noFactorsWereFound = false;
         }
-        if(!isAtLeastAFactorFound) {
-            raindropString = "" + number;
+        if(noFactorsWereFound) {
+            raindropString = Integer.toString(number);
         }
         return raindropString;
     }
