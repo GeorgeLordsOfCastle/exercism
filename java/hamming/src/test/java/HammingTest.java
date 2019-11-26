@@ -12,31 +12,31 @@ public class HammingTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void testNoDistanceBetweenEmptyStrands() {
+    public void testNoDistanceBetweenEmptyStrands() throws Exception {
         assertEquals(0, new Hamming("", "").getHammingDistance());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testNoDistanceBetweenShortIdenticalStrands() {
+    public void testNoDistanceBetweenShortIdenticalStrands() throws Exception {
         assertEquals(0, new Hamming("A", "A").getHammingDistance());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testCompleteDistanceInSingleLetterDifferentStrands() {
+    public void testCompleteDistanceInSingleLetterDifferentStrands() throws Exception {
         assertEquals(1, new Hamming("G", "T").getHammingDistance());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testDistanceInLongIdenticalStrands() {
+    public void testDistanceInLongIdenticalStrands() throws Exception {
         assertEquals(0, new Hamming("GGACTGAAATCTG", "GGACTGAAATCTG").getHammingDistance());
     }
 
     @Ignore("Remove to run test")
     @Test
-    public void testDistanceInLongDifferentStrands() {
+    public void testDistanceInLongDifferentStrands() throws Exception {
         assertEquals(9, new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance());
     }
 
