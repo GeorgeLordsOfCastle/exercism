@@ -3,8 +3,9 @@ import java.util.List;
 
 class PigLatinTranslator {
     private final static List<String> vowelList = Arrays.asList("a", "e", "i", "o", "u");
+    private final static List<String> vowelIfFollowedByConsonantList = Arrays.asList("x", "y");
     private final static List<String> consonantList = Arrays.asList("b", "c", "d", "f", "g", "h",
-            "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z");
+            "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "z");
 
     String translate(String word) {
         if(isAVowelSoundWord(word)) {
@@ -16,7 +17,14 @@ class PigLatinTranslator {
 
     private static boolean isAVowelSoundWord(String word) {
         return vowelList.contains(String.valueOf(word.charAt(0)))
-                || word.startsWith("xr") || word.startsWith("yt");
+                || (vowelIfFollowedByConsonantList.contains(String.valueOf(word.charAt(0)))
+                        && consonantList.contains(String.valueOf(word.charAt(1))));
+    }
+
+    private static boolean isAConsonantSoundWord(String word) {
+        return consonantList.contains(String.valueOf(word.charAt(0)))
+                || (vowelIfFollowedByConsonantList.contains(String.valueOf(word.charAt(0)))
+                        && vowelList.contains(String.valueOf(word.charAt(1))));
     }
 
     private static String addAyAtTheEnd(String word) {
@@ -49,8 +57,11 @@ class PigLatinTranslator {
         // pre-condition: word starts with a consonant
         // two chars cases: ch, gh, ph, th, sh, wh
         StringBuilder consonantSoundPart = new StringBuilder();
-        for(char charI : word.toCharArray()) {
-            if (consonantList.contains(String.valueOf(charI))) {
+        for(int i=0; i< word.length(); i++) {
+            char charI = word.charAt(i);
+            if (consonantList.contains(String.valueOf(charI))
+                    || (vowelIfFollowedByConsonantList.contains(String.valueOf(charI))
+                            && vowelList.contains(String.valueOf(word.charAt(i+1))))) {
                 consonantSoundPart.append(charI);
             } else {
                 break;
