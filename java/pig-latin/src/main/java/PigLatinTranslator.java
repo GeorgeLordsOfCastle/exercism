@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class PigLatinTranslator {
     private final static List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u');
@@ -7,11 +9,17 @@ class PigLatinTranslator {
     private final static List<Character> consonantList = Arrays.asList('b', 'c', 'd', 'f', 'g', 'h',
             'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'z');
 
-    String translate(String word) {
-        if(isAVowelSoundWord(word)) {
-            return addAyAtTheEnd(word);
+    String translate(String phrase) {
+        return Stream.of(phrase.split(" "))
+                .map(this::translateWord)
+                .collect(Collectors.joining(" "));
+    }
+
+    private String translateWord(String phrase) {
+        if(isAVowelSoundWord(phrase)) {
+            return addAyAtTheEnd(phrase);
         } else {
-            return addAyAtTheEnd(getWordWithConsonantSoundPartMovedAtTheEnd(word));
+            return addAyAtTheEnd(getWordWithConsonantSoundPartMovedAtTheEnd(phrase));
         }
     }
 
