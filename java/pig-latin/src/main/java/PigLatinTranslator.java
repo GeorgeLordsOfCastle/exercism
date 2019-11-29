@@ -21,12 +21,6 @@ class PigLatinTranslator {
                         && consonantList.contains(word.charAt(1)));
     }
 
-    private static boolean isAConsonantSoundWord(String word) {
-        return consonantList.contains(word.charAt(0))
-                || (vowelIfFollowedByConsonantList.contains(word.charAt(0))
-                        && vowelList.contains(word.charAt(1)));
-    }
-
     private static String addAyAtTheEnd(String word) {
         return word + "ay";
     }
