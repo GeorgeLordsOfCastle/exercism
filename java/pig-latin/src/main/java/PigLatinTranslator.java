@@ -2,10 +2,10 @@ import java.util.Arrays;
 import java.util.List;
 
 class PigLatinTranslator {
-    private final static List<String> vowelList = Arrays.asList("a", "e", "i", "o", "u");
-    private final static List<String> vowelIfFollowedByConsonantList = Arrays.asList("x", "y");
-    private final static List<String> consonantList = Arrays.asList("b", "c", "d", "f", "g", "h",
-            "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "z");
+    private final static List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u');
+    private final static List<Character> vowelIfFollowedByConsonantList = Arrays.asList('x', 'y');
+    private final static List<Character> consonantList = Arrays.asList('b', 'c', 'd', 'f', 'g', 'h',
+            'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'z');
 
     String translate(String word) {
         if(isAVowelSoundWord(word)) {
@@ -16,15 +16,15 @@ class PigLatinTranslator {
     }
 
     private static boolean isAVowelSoundWord(String word) {
-        return vowelList.contains(String.valueOf(word.charAt(0)))
-                || (vowelIfFollowedByConsonantList.contains(String.valueOf(word.charAt(0)))
-                        && consonantList.contains(String.valueOf(word.charAt(1))));
+        return vowelList.contains(word.charAt(0))
+                || (vowelIfFollowedByConsonantList.contains(word.charAt(0))
+                        && consonantList.contains(word.charAt(1)));
     }
 
     private static boolean isAConsonantSoundWord(String word) {
-        return consonantList.contains(String.valueOf(word.charAt(0)))
-                || (vowelIfFollowedByConsonantList.contains(String.valueOf(word.charAt(0)))
-                        && vowelList.contains(String.valueOf(word.charAt(1))));
+        return consonantList.contains(word.charAt(0))
+                || (vowelIfFollowedByConsonantList.contains(word.charAt(0))
+                        && vowelList.contains(word.charAt(1)));
     }
 
     private static String addAyAtTheEnd(String word) {
@@ -59,9 +59,9 @@ class PigLatinTranslator {
         StringBuilder consonantSoundPart = new StringBuilder();
         for(int i=0; i< word.length(); i++) {
             char charI = word.charAt(i);
-            if (consonantList.contains(String.valueOf(charI))
-                    || (vowelIfFollowedByConsonantList.contains(String.valueOf(charI))
-                            && vowelList.contains(String.valueOf(word.charAt(i+1))))) {
+            if (consonantList.contains(charI)
+                    || (vowelIfFollowedByConsonantList.contains(charI)
+                            && vowelList.contains(word.charAt(i+1)))) {
                 consonantSoundPart.append(charI);
             } else {
                 break;
