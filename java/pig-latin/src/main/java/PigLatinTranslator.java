@@ -27,6 +27,9 @@ class PigLatinTranslator {
 
     private static String getWordWithConsonantSoundPartMovedAtTheEnd(String word) {
         StringBuilder wordWithConsonantSoundPartMovedAtTheEnd = new StringBuilder();
+        if(word.length() == 2 && word.charAt(1) == 'y') {
+            return wordWithConsonantSoundPartMovedAtTheEnd.append("y").append(word.charAt(0)).toString();
+        }
         String consonantSoundPart = getConsonantSoundPart(word);
         String wordWithoutConsonantSoundPart = word.replace(consonantSoundPart, "");
         if(isQuCase(wordWithoutConsonantSoundPart, consonantSoundPart)) {
