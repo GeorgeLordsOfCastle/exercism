@@ -1,12 +1,9 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class ProteinTranslator {
     List<String> translate(String rnaSequence) {
         List<String> proteinList = new ArrayList<>();
-        String possibleProteinSequence = rnaSequence.split("UAA")[0];
+        String possibleProteinSequence = getUntilFirstStopRnaSequence(rnaSequence);
         while (possibleProteinSequence.length()>2) {
             String currentPossibleProtein = possibleProteinSequence.substring(0, 3);
             possibleProteinSequence = possibleProteinSequence.replaceFirst(currentPossibleProtein, "");
@@ -18,6 +15,19 @@ class ProteinTranslator {
             }
         }
         return proteinList;
+    }
+
+    private final static List<String> stopList = Arrays.asList("UAA", "UAG", "UGA");
+
+    private static String getUntilFirstStopRnaSequence(String rnaSequence) {
+        String untilFirstStopRnaSequence = new String(rnaSequence.getBytes());
+        for(String stop : stopList) {
+            if(untilFirstStopRnaSequence.equals(stop)) {
+                return "";
+            }
+            untilFirstStopRnaSequence = untilFirstStopRnaSequence.split(stop)[0];
+        }
+        return untilFirstStopRnaSequence;
     }
 
     private static String getProteinName(String currentPossibleProtein) {
