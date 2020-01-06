@@ -21,7 +21,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void shouting() {
         assertEquals(
@@ -30,7 +29,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void shoutingGibberish() {
         assertEquals(
@@ -39,7 +37,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void askingAQuestion() {
         assertEquals(
@@ -48,7 +45,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void askingANumericQuestion() {
         assertEquals(
@@ -57,7 +53,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void askingGibberish() {
         assertEquals(
@@ -66,7 +61,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void talkingForcefully() {
         assertEquals(
@@ -75,111 +69,110 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void usingAcronymsInRegularSpeech() {
         assertEquals(
-            "Whatever.", bob.hey("It's OK if you don't want to go to the DMV.")
+            "Whatever.",
+            bob.hey("It's OK if you don't want to go to the DMV.")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void forcefulQuestions() {
         assertEquals(
-            "Calm down, I know what I'm doing!", bob.hey("WHAT THE HELL WERE YOU THINKING?")
+            "Calm down, I know what I'm doing!",
+            bob.hey("WHAT THE HELL WERE YOU THINKING?")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void shoutingNumbers() {
         assertEquals(
-            "Whoa, chill out!", bob.hey("1, 2, 3 GO!")
+            "Whoa, chill out!",
+            bob.hey("1, 2, 3 GO!")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void onlyNumbers() {
         assertEquals(
-            "Whatever.", bob.hey("1, 2, 3")
+            "Whatever.",
+            bob.hey("1, 2, 3")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void questionWithOnlyNumbers() {
         assertEquals(
-            "Sure.", bob.hey("4?")
+            "Sure.",
+            bob.hey("4?")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void shoutingWithSpecialCharacters() {
         assertEquals(
-            "Whoa, chill out!", bob.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
+            "Whoa, chill out!",
+            bob.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
-            "Whoa, chill out!", bob.hey("I HATE THE DMV")
+            "Whoa, chill out!",
+            bob.hey("I HATE THE DMV")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void statementContainingQuestionMark() {
         assertEquals(
-            "Whatever.", bob.hey("Ending with ? means a question.")
+            "Whatever.",
+            bob.hey("Ending with ? means a question.")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void nonLettersWithQuestion() {
         assertEquals(
-            "Sure.", bob.hey(":) ?")
+            "Sure.",
+            bob.hey(":) ?")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void prattlingOn() {
         assertEquals(
-            "Sure.", bob.hey("Wait! Hang on. Are you going to be OK?")
+            "Sure.",
+            bob.hey("Wait! Hang on. Are you going to be OK?")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void silence() {
         assertEquals(
-            "Fine. Be that way!", bob.hey("")
+            "Fine. Be that way!",
+            bob.hey("")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void prolongedSilence() {
         assertEquals(
-            "Fine. Be that way!", bob.hey("          ")
+            "Fine. Be that way!",
+            bob.hey("          ")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void alternateSilence() {
         assertEquals(
-            "Fine. Be that way!", bob.hey("\t\t\t\t\t\t\t\t\t\t")
+            "Fine. Be that way!",
+            bob.hey("\t\t\t\t\t\t\t\t\t\t")
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleLineQuestion() {
         assertEquals(
@@ -188,7 +181,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void startingWithWhitespace() {
         assertEquals(
@@ -197,7 +189,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void endingWithWhiteSpace() {
         assertEquals(
@@ -206,7 +197,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void otherWhiteSpace() {
         assertEquals(
@@ -215,7 +205,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void nonQuestionEndingWithWhiteSpace() {
         assertEquals(
